@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'estudoPratico',
+    'clientes',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -76,8 +78,12 @@ WSGI_APPLICATION = 'estudoPratico.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'estudoDjango',  # Nome do banco de dados
+        'USER': 'postgres',      # Nome do usuário do banco de dados
+        'PASSWORD': '123456', # Senha do usuário do banco de dados
+        'HOST': 'localhost',     # Endereço do banco de dados
+        'PORT': '5432',          # Porta do banco de dados
     }
 }
 

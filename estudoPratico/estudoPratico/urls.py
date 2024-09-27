@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
+from clientes.views import ClienteListCreate, ClienteRetrieveUpdateDestroy
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #path('api/', include('clientes.urls')),  # Inclua o app de clientes
+    path('client/create', ClienteListCreate.as_view(), name='create'),
+    path('clientes/<int:pk>/', ClienteRetrieveUpdateDestroy.as_view(), name='cliente-detail'),
 ]
